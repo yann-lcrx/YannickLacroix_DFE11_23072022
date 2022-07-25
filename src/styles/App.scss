@@ -1,0 +1,40 @@
+@import "variables";
+
+.App {
+  header {
+    padding-top: 5 * $mu;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    nav ul {
+      display: flex;
+      font-size: 1.4rem;
+      list-style-type: none;
+      gap: 7 * $mu;
+      a {
+        color: $color-primary;
+        text-decoration: none;
+      }
+    }
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding-top: 8 * $mu;
+    text-align: center;
+    padding-bottom: 4 * $mu;
+    p {
+      font-size: 1.4rem;
+    }
+    img {
+      margin-bottom: 4 * $mu;
+    }
+  }
+
+  &__wrapper {
+    max-width: 1240px;
+    width: 90%;
+    margin: auto;
+  }
+}
