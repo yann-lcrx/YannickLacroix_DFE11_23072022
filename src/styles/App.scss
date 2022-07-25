@@ -1,11 +1,14 @@
 @import "variables";
 
 .App {
+  background-color: $color-background;
+
   header {
     padding-top: 5 * $mu;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 8 * $mu;
     nav ul {
       display: flex;
       font-size: 1.4rem;
@@ -13,12 +16,12 @@
       gap: 7 * $mu;
       a {
         color: $color-primary;
-        text-decoration: none;
       }
     }
   }
 
   footer {
+    margin-top: 8 * $mu;
     background-color: #000;
     color: #fff;
     padding-top: 8 * $mu;

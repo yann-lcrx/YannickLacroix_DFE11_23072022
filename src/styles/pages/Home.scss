@@ -1,0 +1,13 @@
+@import "../variables";
+
+.Home {
+  .staysList {
+    background-color: $color-card-background;
+    border-radius: 25px;
+    padding: 7 * $mu 6 * $mu;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7 * $mu;
+  }
+}
