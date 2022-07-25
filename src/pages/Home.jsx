@@ -19,14 +19,21 @@ function HomePage() {
 
   return (
     <main className="Home">
-      <div>Chez vous, partout et ailleurs</div>
+      <section className="hero">
+        <h1>Chez vous, partout et ailleurs</h1>
+      </section>
 
       <div className="staysList">
         {isLoading ? (
           <p>Chargement...</p>
         ) : (
           stays.map((stay) => (
-            <StayItem name={stay.title} id={stay.id} cover={stay.cover} />
+            <StayItem
+              name={stay.title}
+              id={stay.id}
+              cover={stay.cover}
+              key={stay.id}
+            />
           ))
         )}
       </div>

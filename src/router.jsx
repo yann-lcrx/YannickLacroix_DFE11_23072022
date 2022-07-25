@@ -9,8 +9,8 @@ function AppRouter() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/stay" element={<StayPage />} />
-      <Route path="/404" element={<ErrorPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 }

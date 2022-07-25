@@ -1,5 +1,9 @@
+import { useParams } from "react-router-dom";
+
 function StayPage() {
-  return <div>Stay</div>;
+  const { stayId } = useParams();
+
+  return <main>Stay</main>;
 }
 
 export default StayPage;

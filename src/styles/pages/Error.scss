@@ -1,0 +1,21 @@
+@import "../variables";
+
+.Error {
+  color: $color-primary;
+  text-align: center;
+
+  h1 {
+    font-size: 16rem;
+    line-height: 410.69px;
+  }
+
+  p {
+    font-size: 2rem;
+    margin-bottom: 23 * $mu;
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}

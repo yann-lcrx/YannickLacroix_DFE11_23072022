@@ -2,5 +2,7 @@ $mu: 8px;
 
 $color-primary: #ff6060;
 $color-white: #fff;
-$color-background: #f7f7f7;
-$color-card-background: #e6e6e6;
+$color-grey-100: #f7f7f7;
+
+$color-background: $color-white;
+$color-card-background: $color-grey-100;
