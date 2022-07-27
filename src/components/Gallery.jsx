@@ -4,7 +4,7 @@ import styles from "../styles/components/Gallery.module.scss";
 /**
  * Displays given set of pictures within a slideshow
  * @param {{pictures: string[], alternativeText: string}} props
- * @returns
+ * @returns JSX
  */
 function Gallery({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -3,7 +3,7 @@ import styles from "../styles/components/Tag.module.scss";
 /**
  * Chip element for stay tags
  * @param {{content: string}} props
- * @returns
+ * @returns JSX
  */
 function Tag({ content }) {
   return <li className={styles.Tag}>{content}</li>;

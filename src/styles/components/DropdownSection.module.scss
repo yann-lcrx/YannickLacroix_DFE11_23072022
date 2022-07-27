@@ -4,6 +4,7 @@
   width: 100%;
 
   header {
+    cursor: pointer;
     position: relative;
     z-index: 1;
     background-color: $color-primary;
@@ -22,8 +23,7 @@
     color: $color-primary;
     background-color: $color-grey-90;
     border-radius: $radius-md;
-    height: 249px - 5 * $mu -6.5 * $mu;
-    padding: 5 * $mu 1.5 * $mu 6.5 * $mu 2.5 * $mu;
+    padding: 5 * $mu 1.5 * $mu 2.5 * $mu 2.5 * $mu;
   }
 
   h2 {

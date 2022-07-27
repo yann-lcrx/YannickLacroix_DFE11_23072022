@@ -4,7 +4,7 @@ import "../styles/components/StayItem.scss";
 /**
  * preview item card for a stay
  * @param {{name: string, cover: string, id: string}} props
- * @returns
+ * @returns JSX
  */
 function StayItem({ name, cover, id }) {
   return (
