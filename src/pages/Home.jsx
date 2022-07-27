@@ -8,7 +8,7 @@ function HomePage() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("logements.json")
+    fetch("/logements.json")
       .then((res) => res.json())
       .then((staysData) => {
         setStays(staysData);

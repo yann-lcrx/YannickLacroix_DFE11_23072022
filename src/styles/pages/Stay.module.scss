@@ -1,0 +1,74 @@
+@import "../variables";
+
+.Stay {
+  > section {
+    display: flex;
+    flex-direction: column;
+    gap: 3 * $mu;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  h1 {
+    color: $color-primary;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 51.34px;
+    + p {
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+
+  .leftSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5 * $mu;
+  }
+
+  .rightSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3 * $mu;
+  }
+
+  .rating {
+    display: flex;
+    gap: $mu;
+  }
+
+  .mainDetails {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      gap: $mu;
+    }
+  }
+
+  .host {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $mu;
+    p {
+      width: 93px;
+      text-align: end;
+      color: $color-primary;
+    }
+    img {
+      border-radius: 64px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .bottomSection {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 9 * $mu;
+  }
+}

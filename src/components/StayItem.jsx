@@ -9,7 +9,7 @@ import "../styles/components/StayItem.scss";
 function StayItem({ name, cover, id }) {
   return (
     <div className="StayItem">
-      <Link to={`/stay?id=${id}`}>
+      <Link to={`/stay/${id}`}>
         <article
           tabIndex={0}
           style={{

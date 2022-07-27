@@ -1,0 +1,14 @@
+@import "../variables";
+
+.Tag {
+  background-color: $color-primary;
+  border-radius: $radius-md;
+  color: $color-white;
+  min-width: 115px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 0 $mu;
+  font-size: 0.7rem;
+}
