@@ -17,70 +17,77 @@ function StayPage() {
       .then((res) => res.json())
       .then((staysData) => {
         const matchingStay = staysData.find((stay) => stay.id === stayId);
-        setStay(matchingStay);
+        matchingStay
+          ? setStay(matchingStay)
+          : setError(
+              `Erreur: Impossible de trouver un logement avec l'ID ${stayId}`
+            );
       })
-      .catch((err) => setError(err))
+      .catch((err) =>
+        setError(`Erreur lors de la récupération des logements: ${err.message}`)
+      )
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [stayId]);
 
   return (
     <main className={styles.Stay}>
       {isLoading ? (
         <p>Chargement</p>
-      ) : (
-        stay && (
-          <section>
-            <Gallery pictures={stay.pictures} />
-            <div>
-              <div className={styles.mainDetails}>
-                <div className={styles.leftSection}>
-                  <div>
-                    <h1>{stay.title}</h1>
-                    <p>{stay.location}</p>
-                  </div>
-                  <ul>
-                    {stay.tags && stay.tags.map((tag) => <Tag content={tag} />)}
-                  </ul>
+      ) : stay ? (
+        <section>
+          <Gallery pictures={stay.pictures} />
+          <div>
+            <div className={styles.mainDetails}>
+              <div className={styles.leftSection}>
+                <div>
+                  <h1>{stay.title}</h1>
+                  <p>{stay.location}</p>
                 </div>
-                <div className={styles.rightSection}>
-                  <div className={styles.host}>
-                    <p>{stay.host.name}</p>
-                    <img src={stay.host.picture} alt={stay.host.name} />
-                  </div>
-                  <div className={styles.rating}>
-                    {[...Array(5)].map((star, index) =>
-                      parseInt(stay.rating) >= index + 1 ? (
-                        <img alt="étoile" src="/star.svg" key={index} />
-                      ) : (
-                        <img
-                          alt="étoile grisée"
-                          src="/dullstar.svg"
-                          key={index}
-                        />
-                      )
-                    )}
-                  </div>
+                <ul>
+                  {stay.tags &&
+                    stay.tags.map((tag) => <Tag content={tag} key={tag} />)}
+                </ul>
+              </div>
+              <div className={styles.rightSection}>
+                <div className={styles.host}>
+                  <p>{stay.host.name}</p>
+                  <img src={stay.host.picture} alt={stay.host.name} />
+                </div>
+                <div className={styles.rating}>
+                  {[...Array(5)].map((star, index) =>
+                    parseInt(stay.rating) >= index + 1 ? (
+                      <img alt="étoile" src="/star.svg" key={index} />
+                    ) : (
+                      <img
+                        alt="étoile grisée"
+                        src="/dullstar.svg"
+                        key={index}
+                      />
+                    )
+                  )}
                 </div>
               </div>
             </div>
-            <div className={styles.bottomSection}>
-              <DropdownSection
-                title="Description"
-                content={<p>{stay.description}</p>}
-              />
-              <DropdownSection
-                title="Equipements"
-                content={
-                  <ul>
-                    {stay.equipments.map((equipment) => (
-                      <li key={equipment}>{equipment}</li>
-                    ))}
-                  </ul>
-                }
-              />
-            </div>
-          </section>
-        )
+          </div>
+          <div className={styles.bottomSection}>
+            <DropdownSection
+              title="Description"
+              content={<p>{stay.description}</p>}
+            />
+            <DropdownSection
+              title="Equipements"
+              content={
+                <ul>
+                  {stay.equipments.map((equipment) => (
+                    <li key={equipment}>{equipment}</li>
+                  ))}
+                </ul>
+              }
+            />
+          </div>
+        </section>
+      ) : (
+        <p className={styles.error}>{error}</p>
       )}
     </main>
   );
