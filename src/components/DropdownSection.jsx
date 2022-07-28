@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../styles/components/DropdownSection.module.scss";
 
 /**
- * Togglable dropdown menu with a title and text content
+ * Togglable dropdown section with a title and text content
  * @param {{title: string, content: ReactNode}} props
  * @returns JSX
  */

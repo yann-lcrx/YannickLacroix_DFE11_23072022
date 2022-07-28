@@ -1,9 +1,15 @@
 @import "../variables";
+@import "../mixins";
 
 .StayItem {
   width: 340px;
   height: 340px;
   border-radius: 10px;
+
+  @include mobile-only {
+    width: 100%;
+    height: 255px;
+  }
 
   article {
     width: 100%;

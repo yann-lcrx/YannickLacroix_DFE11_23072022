@@ -1,21 +1,35 @@
 @import "../variables";
+@import "../mixins";
 
 .Error {
   color: $color-primary;
   text-align: center;
+  padding-top: 15 * $mu;
 
   h1 {
     font-size: 16rem;
     line-height: 410.69px;
+    @include mobile-only {
+      font-size: 5.5rem;
+      line-height: 136.9px;
+    }
   }
 
   p {
     font-size: 2rem;
     margin-bottom: 23 * $mu;
+    font-weight: 500;
+    @include mobile-only {
+      font-size: 1rem;
+    }
   }
 
   a {
     color: $color-primary;
     text-decoration: underline;
+    font-weight: 500;
+    @include mobile-only {
+      font-size: 0.8rem;
+    }
   }
 }

@@ -1,6 +1,11 @@
 @import "../variables";
+@import "../mixins";
 
 .Home {
+  display: flex;
+  flex-direction: column;
+  gap: 3 * $mu;
+
   .staysList {
     background-color: $color-card-background;
     border-radius: 25px;
@@ -9,5 +14,13 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 7 * $mu;
+
+    @include mobile-only {
+      background-color: $color-background;
+      padding: unset;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 2.5 * $mu;
+    }
   }
 }

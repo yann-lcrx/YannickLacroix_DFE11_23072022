@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 
 .Tag {
   background-color: $color-primary;
@@ -11,4 +12,11 @@
   display: flex;
   padding: 0 $mu;
   font-size: 0.7rem;
+  @include mobile-only {
+    min-width: 84px;
+    height: 18px;
+    padding: 0 0.5 * $mu;
+    border-radius: 5px;
+    font-size: 0.5rem;
+  }
 }

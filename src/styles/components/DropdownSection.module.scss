@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 
 .DropdownSection {
   width: 100%;
@@ -15,6 +16,13 @@
     justify-content: space-between;
     padding: 0 2 * $mu;
     border-radius: $radius-md;
+    @include mobile-only {
+      height: 30px;
+      padding: 0 $mu 0 1.5 * $mu;
+      img {
+        width: 15px;
+      }
+    }
   }
 
   .content {
@@ -24,9 +32,18 @@
     background-color: $color-grey-90;
     border-radius: $radius-md;
     padding: 5 * $mu 1.5 * $mu 2.5 * $mu 2.5 * $mu;
+    @include mobile-only {
+      padding: 3 * $mu $mu 1px 1.5 * $mu;
+      * {
+        font-size: 0.7rem;
+      }
+    }
   }
 
   h2 {
     font-weight: 500;
+    @include mobile-only {
+      font-size: 0.7rem;
+    }
   }
 }

@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 
 .Hero {
   width: 100%;
@@ -12,9 +13,20 @@
   align-items: center;
   justify-content: center;
 
+  @include mobile-only {
+    justify-content: flex-start;
+    height: 111px;
+    border-radius: $radius-md;
+  }
+
   h1 {
     color: $color-white;
     font-size: 2.7rem;
     font-weight: 500;
+    padding: 4 * $mu 2 * $mu;
+    @include mobile-only {
+      font-size: 1.3rem;
+      width: 217px;
+    }
   }
 }

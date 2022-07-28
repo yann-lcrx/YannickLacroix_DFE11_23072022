@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .App {
   background-color: $color-background;
@@ -9,14 +10,33 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8 * $mu;
+    @include mobile-only {
+      padding-top: 2.5 * $mu;
+      margin-bottom: 2.5 * $mu;
+    }
+
     nav ul {
       display: flex;
       list-style-type: none;
       gap: 7 * $mu;
+      @include mobile-only {
+        gap: 1.5 * $mu;
+      }
       a {
         color: $color-primary;
         font-size: 1.4rem;
         font-weight: 500;
+        white-space: nowrap;
+        @include mobile-only {
+          font-size: 0.7rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    @include mobile-only {
+      img {
+        width: 145px;
       }
     }
   }
@@ -30,6 +50,9 @@
     padding-bottom: 4 * $mu;
     p {
       font-size: 1.4rem;
+      @include mobile-only {
+        font-size: 0.7rem;
+      }
     }
     img {
       margin-bottom: 4 * $mu;

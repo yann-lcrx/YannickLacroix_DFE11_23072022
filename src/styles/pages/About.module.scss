@@ -1,7 +1,11 @@
 @import "../variables";
+@import "../mixins";
 
 .About {
   display: flex;
   flex-direction: column;
   gap: 3.5 * $mu;
+  @include mobile-only {
+    gap: 2.5 * $mu;
+  }
 }

@@ -1,10 +1,14 @@
 @import "../variables";
+@import "../mixins";
 
 .Stay {
   > section {
     display: flex;
     flex-direction: column;
     gap: 3 * $mu;
+    @include mobile-only {
+      gap: 2 * $mu;
+    }
   }
 
   li {
@@ -16,9 +20,16 @@
     font-weight: 500;
     font-size: 2rem;
     line-height: 51.34px;
+    @include mobile-only {
+      font-size: 1rem;
+      line-height: 25.67px;
+    }
     + p {
       color: $color-primary;
       font-weight: 500;
+      @include mobile-only {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -26,26 +37,50 @@
     display: flex;
     flex-direction: column;
     gap: 2.5 * $mu;
+    @include mobile-only {
+      gap: 1.5 * $mu;
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      @include mobile-only {
+        gap: 0.5 * $mu;
+      }
+    }
   }
 
   .rightSection {
     display: flex;
     flex-direction: column;
     gap: 3 * $mu;
+    @include mobile-only {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
   }
 
   .rating {
     display: flex;
     gap: $mu;
+    @include mobile-only {
+      img {
+        width: 15px;
+      }
+    }
   }
 
   .mainDetails {
     display: flex;
     justify-content: space-between;
+    @include mobile-only {
+      flex-direction: column;
+      gap: 1.5 * $mu;
+    }
 
     ul {
       display: flex;
       gap: $mu;
+      flex-wrap: wrap;
     }
   }
 
@@ -58,11 +93,19 @@
       width: 93px;
       text-align: end;
       color: $color-primary;
+      font-weight: 500;
+      @include mobile-only {
+        font-size: 0.7rem;
+      }
     }
     img {
       border-radius: 64px;
       width: 64px;
       height: 64px;
+      @include mobile-only {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 
@@ -70,5 +113,9 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 9 * $mu;
+    @include mobile-only {
+      flex-direction: column;
+      gap: 2.5 * $mu;
+    }
   }
 }

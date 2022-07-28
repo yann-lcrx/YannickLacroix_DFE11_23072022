@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/components/StayItem.scss";
+import styles from "../styles/components/StayItem.module.scss";
 
 /**
  * preview item card for a stay
@@ -8,7 +8,7 @@ import "../styles/components/StayItem.scss";
  */
 function StayItem({ name, cover, id }) {
   return (
-    <div className="StayItem">
+    <div className={styles.StayItem}>
       <Link to={`/stay/${id}`}>
         <article
           tabIndex={0}

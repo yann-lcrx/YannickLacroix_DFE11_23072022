@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins";
 
 .Gallery {
   div[role="option"] {
@@ -13,6 +14,12 @@
     gap: 15 * $mu;
     background-position: center;
     background-size: cover;
+    @include mobile-only {
+      justify-content: center;
+      border-radius: $radius-md;
+      padding: 0.5 * $mu;
+      height: 255px;
+    }
   }
 
   .controls {
@@ -21,11 +28,17 @@
     width: 100%;
     img {
       cursor: pointer;
+      @include mobile-only {
+        width: 12px;
+      }
     }
   }
 
   p {
     color: $color-white;
     font-weight: 500;
+    @include mobile-only {
+      display: none;
+    }
   }
 }
