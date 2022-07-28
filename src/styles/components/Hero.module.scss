@@ -12,14 +12,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 
   @include mobile-only {
+    &.mobileHeightSmall {
+      height: 111px;
+    }
     justify-content: flex-start;
-    height: 111px;
     border-radius: $radius-md;
   }
 
   h1 {
+    position: relative;
+    z-index: 2;
     color: $color-white;
     font-size: 2.7rem;
     font-weight: 500;
@@ -27,6 +33,22 @@
     @include mobile-only {
       font-size: 1.3rem;
       width: 217px;
+    }
+  }
+
+  &::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-lg;
+    @include mobile-only {
+      border-radius: $radius-md;
     }
   }
 }

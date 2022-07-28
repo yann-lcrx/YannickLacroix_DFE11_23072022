@@ -24,7 +24,11 @@ function HomePage() {
 
   return (
     <main className={styles.Home}>
-      <Hero text="Chez vous, partout et ailleurs" />
+      <Hero
+        text="Chez vous, partout et ailleurs"
+        picture="/landscape.jpg"
+        mobileHeight="small"
+      />
       {!error.length ? (
         <div className={styles.staysList}>
           {isLoading ? (

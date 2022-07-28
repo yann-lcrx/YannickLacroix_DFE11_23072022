@@ -8,4 +8,16 @@
   @include mobile-only {
     gap: 2.5 * $mu;
   }
+
+  .info {
+    width: 82.5%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5 * $mu;
+    @include mobile-only {
+      gap: 2.5 * $mu;
+      width: 100%;
+    }
+  }
 }

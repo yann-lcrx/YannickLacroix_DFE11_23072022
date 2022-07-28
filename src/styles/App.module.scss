@@ -4,6 +4,13 @@
 .App {
   background-color: $color-background;
 
+  li[aria-current="page"] {
+    text-decoration: underline 2px $color-primary;
+    @include mobile-only {
+      text-decoration: underline 1px $color-primary;
+    }
+  }
+
   .header {
     padding-top: 5 * $mu;
     display: flex;
