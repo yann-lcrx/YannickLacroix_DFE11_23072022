@@ -1,9 +1,11 @@
 import DropdownSection from "../components/DropdownSection";
+import Hero from "../components/Hero";
 import styles from "../styles/pages/About.module.scss";
 
 function AboutPage() {
   return (
     <main className={styles.About}>
+      <Hero text="" />
       <DropdownSection
         title="Fiabilité"
         content={

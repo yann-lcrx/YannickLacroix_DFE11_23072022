@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import Hero from "../components/Hero";
 import StayItem from "../components/StayItem";
-import "../styles/pages/Home.scss";
+import styles from "../styles/pages/Home.module.scss";
 
 function HomePage() {
   const [stays, setStays] = useState([]);
@@ -18,12 +19,10 @@ function HomePage() {
   }, []);
 
   return (
-    <main className="Home">
-      <section className="hero">
-        <h1>Chez vous, partout et ailleurs</h1>
-      </section>
+    <main className={styles.Home}>
+      <Hero text="Chez vous, partout et ailleurs" />
 
-      <div className="staysList">
+      <div className={styles.staysList}>
         {isLoading ? (
           <p>Chargement...</p>
         ) : (
