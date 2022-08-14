@@ -11,7 +11,6 @@ function StayItem({ name, cover, id }) {
     <div className={styles.StayItem}>
       <Link to={`/stay/${id}`}>
         <article
-          tabIndex={0}
           style={{
             backgroundImage: `url(${cover}), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%`,
           }}
