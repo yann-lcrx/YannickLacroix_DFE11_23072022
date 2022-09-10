@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 
 function App() {
   const pathname = useLocation().pathname;
-  console.log(pathname);
 
   return (
     <div className={styles.App}>
